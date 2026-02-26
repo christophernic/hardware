@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    margin-top: 5vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.3);
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+}
+
+.erro {
+    color: #ff4b4b;
+    font-size: 14px;
+    margin-bottom: 15px;
+    min-height: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.oculto {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #00c6ff;
+    color: #f8f9fa;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+}
