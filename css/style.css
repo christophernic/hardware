@@ -117,3 +117,15 @@ li:hover {
     transform: translateX(5px);
     background: rgba(255, 255, 255, 0.15);
 }
+
+.container-botoes {
+    display: flex;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+.btn-editar, .btn-remover {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 0;
+}

@@ -17,9 +17,55 @@ function renderTarefas() {
 
     for (let i = 0; i < tarefas.length; i++) {
         const li = document.createElement('li');
-        li.textContent = tarefas[i];
+        
+        const spanTarefa = document.createElement('span');
+        spanTarefa.textContent = tarefas[i];
+        spanTarefa.classList.add('texto-tarefa');
+        li.appendChild(spanTarefa);
+        
+        const containerBotoes = document.createElement('div');
+        containerBotoes.classList.add('container-botoes');
+        
+        const btnEditar = document.createElement('button');
+        btnEditar.textContent = 'Editar';
+        btnEditar.classList.add('btn-editar');
+        btnEditar.addEventListener('click', function() {
+            editarTarefa(i);
+        });
+        
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'Remover';
+        btnRemover.classList.add('btn-remover');
+        btnRemover.addEventListener('click', function() {
+            removerTarefa(i);
+        });
+        
+        containerBotoes.appendChild(btnEditar);
+        containerBotoes.appendChild(btnRemover);
+        li.appendChild(containerBotoes);
         listaTarefas.appendChild(li);
     }
+}
+
+function editarTarefa(indice) {
+    const novoTexto = prompt('Editar tarefa:', tarefas[indice]);
+    
+    if (novoTexto === null) {
+        return;
+    }
+    
+    if (!validarTarefa(novoTexto)) {
+        alert('A tarefa não pode estar vazia!');
+        return;
+    }
+    
+    tarefas[indice] = novoTexto.trim();
+    renderTarefas();
+}
+
+function removerTarefa(indice) {
+    tarefas.splice(indice, 1);
+    renderTarefas();
 }
 
 formTarefa.addEventListener('submit', function(evento) {
